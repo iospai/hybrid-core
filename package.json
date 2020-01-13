@@ -1,17 +1,32 @@
 {
   "name": "hybrid-core",
   "version": "1.0.0",
-  "description": "hybrid-core",
-  "main": "index.js",
+  "description": "hybrid core for 2020",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublish": "",
+    "prepublishOnly": "npm run test && npm run lint",
+    "version": "npm run format && git add -A src",
+    "preversion": "npm run lint",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iospai/hybrid-core.git"
   },
-  "keywords": [],
+  "keywords": [
+    "hybrid",
+    "h5"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,6 +34,12 @@
   },
   "homepage": "https://github.com/iospai/hybrid-core#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.4"
   }
 }
