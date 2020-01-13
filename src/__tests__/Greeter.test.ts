@@ -6,5 +6,5 @@
 import { Greeter } from '../index';
 
 test('My Greeter', () => {
-    expect(Greeter('张三')).toBe('Hello 张三');
+  expect(Greeter('张三')).toBe('Hello 张三');
 });

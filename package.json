@@ -1,6 +1,6 @@
 {
   "name": "hybrid-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hybrid core for 2020",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
